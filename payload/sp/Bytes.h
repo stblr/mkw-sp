@@ -17,6 +17,11 @@ static inline u32 read_u32(const u8 *data, u32 offset) {
     return base[0x0] << 24 | base[0x1] << 16 | base[0x2] << 8 | base[0x3];
 }
 
+static inline u16 read_u16_le(const u8 *data, u32 offset) {
+    const u8 *base = data + offset;
+    return base[0x1] << 8 | base[0x0];
+}
+
 static inline u32 read_u32_le(const u8 *data, u32 offset) {
     const u8 *base = data + offset;
     return base[0x3] << 24 | base[0x2] << 16 | base[0x1] << 8 | base[0x0];

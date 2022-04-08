@@ -13,6 +13,8 @@ extern "C" {
 #include "sp/Rel.hh"
 #include "sp/Time.hh"
 extern "C" {
+#include "sp/Usb.h"
+#include "sp/UsbHid.h"
 #include "sp/keyboard/SIKeyboard.h"
 }
 #include "sp/net/Net.hh"
@@ -28,9 +30,6 @@ extern "C" {
 #include "sp/storage/DecompLoader.hh"
 #include "sp/storage/LogFile.hh"
 #include "sp/storage/Storage.hh"
-extern "C" {
-#include "sp/storage/Usb.h"
-}
 
 #include <common/Console.hh>
 #include <common/VI.hh>
@@ -149,6 +148,10 @@ static void Init() {
 
     Console::Print("Initializing concurrent decompressor...");
     Storage::DecompLoader::Init();
+    Console::Print(" done.\n");
+
+    Console::Print("Initializing USB HID...");
+    UsbHid_init();
     Console::Print(" done.\n");
 
     Console::Print("Initializing SI keyboard...");
