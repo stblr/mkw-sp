@@ -10,7 +10,8 @@
 #include "sp/security/Stack.h"
 #include "sp/storage/LogFile.h"
 #include "sp/storage/Storage.h"
-#include "sp/storage/Usb.h"
+#include "sp/Usb.h"
+#include "sp/UsbHid.h"
 
 #include <revolution.h>
 
@@ -59,6 +60,8 @@ void Payload_init(void) {
     Host_PrintMkwSpInfo(OSReport);
 
     DVDExInit();
+
+    UsbHid_init();
 
     SIKeyboard_InitSimple();
 }

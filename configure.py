@@ -331,10 +331,11 @@ code_in_files = {
         os.path.join('payload', 'sp', 'storage', 'NetStorageClient.c'),
         os.path.join('payload', 'sp', 'storage', 'Sdi.c'),
         os.path.join('payload', 'sp', 'storage', 'Storage.c'),
-        os.path.join('payload', 'sp', 'storage', 'Usb.c'),
         os.path.join('payload', 'sp', 'storage', 'UsbStorage.c'),
         #
         os.path.join('payload', 'sp', 'Tcp.c'),
+        os.path.join('payload', 'sp', 'Usb.c'),
+        os.path.join('payload', 'sp', 'UsbHid.c'),
         os.path.join('payload', 'sp', 'Yaz.c'),
         os.path.join('vendor', 'arith64.c'),
         os.path.join('vendor', 'ff', 'diskio.c'),

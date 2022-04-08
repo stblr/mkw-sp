@@ -6,9 +6,8 @@
 
 #include "UsbStorage.h"
 
-#include <sp/Bytes.h>
-
-#include "Usb.h"
+#include "sp/Bytes.h"
+#include "sp/Usb.h"
 
 #include <revolution.h>
 
@@ -249,7 +248,7 @@ static bool UsbStorage_onDeviceAdd(const UsbDeviceInfo *info) {
 
     u16 vendorId = info->deviceDescriptor.vendorId;
     u16 productId = info->deviceDescriptor.productId;
-    SP_LOG("Found device %x:%x", vendorId, productId);
+    SP_LOG("Found device %04x:%04x", vendorId, productId);
     id = info->id;
     interface = info->interfaceDescriptor.interfaceNumber;
 

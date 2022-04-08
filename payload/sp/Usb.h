@@ -3,6 +3,7 @@
 #include <Common.h>
 
 enum {
+    USB_INTERFACE_CLASS_HID = 0x3,
     USB_INTERFACE_CLASS_MASS_STORAGE = 0x8,
 };
 
@@ -46,6 +47,10 @@ enum {
     USB_REQUEST_TYPE_CLASS = 0x1,
     USB_REQUEST_TYPE_VENDOR = 0x2,
     USB_REQUEST_TYPE_RESERVED = 0x3,
+};
+
+enum {
+    USB_GET_DESCRIPTOR = 0x6,
 };
 
 typedef struct {
