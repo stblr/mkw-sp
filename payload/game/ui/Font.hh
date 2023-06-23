@@ -30,4 +30,14 @@ struct MessageInfo {
 };
 static_assert(sizeof(MessageInfo) == 0xc4);
 
+class Font {
+public:
+    Font();
+    void load(const char *file);
+
+private:
+    u8 _00[0x24 - 0x00];
+};
+static_assert(sizeof(Font) == 0x24);
+
 } // namespace UI

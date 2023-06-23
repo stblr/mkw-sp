@@ -42,7 +42,4 @@ typedef struct {
 } Font;
 static_assert(sizeof(Font) == 0x24);
 
-Font *Font_ct(Font *self);
-
-void Font_load(Font *self, const char *file);
 void Font_calcQuad(const Font *self, RKFontGlyphQuad *result, u16 character);

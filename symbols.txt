@@ -817,11 +817,11 @@
 0x805cf2bc GlyphRenderer_setMaterial
 0x805cf7e4 _ZN2UI13GlyphRenderer11setupColorsEjj
 0x805d00b0 Font_805d00b0
-0x805d0f34 Font_ct
-0x805d0ff0 Font_load
+0x805d0f34 _ZN2UI4FontC1Ev
+0x805d0ff0 _ZN2UI4Font4loadEPKc
 0x805D1044 Font_calcQuad
 0x805d1214 Font_buildTexObjs
-0x805d14a4 FontManager_init
+0x805d14a4 _ZN2UI11FontManager4initEv
 0x805d944c _ZN2UI20FriendMatchingPlayer11getTypeNameEv
 0x805d945c _ZN2UI20FriendMatchingPlayerC1Ev
 0x805d9528 _ZN2UI20FriendMatchingPlayer4loadEPNS_8MiiGroupEhh
@@ -1545,6 +1545,7 @@
 0x809c1988 _ZN2UI16MenuModelManager10s_instanceE
 0x809c19a0 unk_809c19a0
 0x809c19b8 _ZN8Graphics13CameraManager10s_instanceE
+0x809c1bf8 s_fontManager
 0x809c1e38 s_sectionManager
 0x809c1e38 _ZN2UI14SectionManager10s_instanceE
 0x809c21d0 s_effectManager

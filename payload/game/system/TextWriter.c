@@ -157,13 +157,14 @@ static void TextWriter_drawQuad(TextWriter *self, GXColor fg_color, GXColor bg_c
 
 static void TextWriter_drawCharByColors(TextWriter *self, char c, GXColor fg_color,
         GXColor bg_color, float size) {
-    assert(sDebugFont != NULL);
-    const FontInformation *info = sDebugFont->base.fontInformation;
+    Font *font = s_fontManager->fonts[1];
+    assert(font != NULL);
+    const FontInformation *info = font->base.fontInformation;
     assert(info != NULL);
     const float fontSize[2] = {(float)info->mWidth, (float)info->mHeight};
 
     RKFontGlyphQuad glyph;
-    Font_calcQuad(sDebugFont, &glyph, c);
+    Font_calcQuad(font, &glyph, c);
 
     float width = size * fontSize[0] * decodeFixed15(glyph.uv.right - glyph.uv.left);
     float height = size * fontSize[1] * decodeFixed15(glyph.uv.bottom - glyph.uv.top);
