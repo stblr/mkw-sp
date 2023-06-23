@@ -5,15 +5,31 @@
 namespace SP::GlobalSettings {
 
 enum class Setting {
-    FileReplacement,
+    Language,
     BootSection,
+    FileReplacement,
     LogFileRetention,
 };
 
 enum class Category {
-    MyStuff,
     UI,
+    MyStuff,
     Miscellaneous,
+};
+
+enum class Language {
+    German,
+    EnglishNTSC,
+    EnglishPAL,
+    SpanishNTSC,
+    SpanishPAL,
+    FrenchNTSC,
+    FrenchPAL,
+    Korean,
+    Italian,
+    Dutch,
+    Japanese,
+    Unspecified,
 };
 
 enum class FileReplacement {
@@ -61,13 +77,18 @@ Helper<S>::type Get() {
 namespace SP::Settings {
 
 template <>
-struct Helper<GlobalSettings::Setting, GlobalSettings::Setting::FileReplacement> {
-    using type = SP::GlobalSettings::FileReplacement;
+struct Helper<GlobalSettings::Setting, GlobalSettings::Setting::Language> {
+    using type = SP::GlobalSettings::Language;
 };
 
 template <>
 struct Helper<GlobalSettings::Setting, GlobalSettings::Setting::BootSection> {
     using type = u32;
+};
+
+template <>
+struct Helper<GlobalSettings::Setting, GlobalSettings::Setting::FileReplacement> {
+    using type = SP::GlobalSettings::FileReplacement;
 };
 
 template <>
