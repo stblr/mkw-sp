@@ -1,10 +1,12 @@
 #include "FontManager.hh"
 
+#include <sp/settings/Language.hh>
+
 namespace UI {
 
 void FontManager::init() {
-    switch (SCGetLanguage()) {
-    case SC_LANG_KOREAN:
+    switch (SP::Language::GetFont()) {
+    case SP::Language::Font::Korean:
         if (REGION == REGION_K) {
             initFont(0, "tt_kart_font_rodan_ntlg_pro_b.brfnt");
         } else {
@@ -19,8 +21,8 @@ void FontManager::init() {
         }
         break;
     }
-    switch (SCGetLanguage()) {
-    case SC_LANG_KOREAN:
+    switch (SP::Language::GetFont()) {
+    case SP::Language::Font::Korean:
         initFont(1, "kart_font_korea.brfnt");
         break;
     default:
