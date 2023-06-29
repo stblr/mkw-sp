@@ -6,6 +6,7 @@
 extern "C" {
 #include <sp/Host.h>
 }
+#include <sp/settings/Language.hh>
 #include <vendor/libhydrogen/hydrogen.h>
 
 namespace UI {
@@ -35,6 +36,27 @@ void TitlePage::onActivate() {
     popupPage->reset();
     popupPage->setWindowMessage(10055);
     push(PageId::MessagePopup, Anim::None);
+}
+
+void TitlePage::afterCalc() {
+    auto *sectionManager = SectionManager::Instance();
+    auto *section = sectionManager->currentSection();
+
+    if (section->isPageFocused(this) && !m_replacementRequested) {
+        m_replacementRequested = sectionManager->registeredPadManager().wasRegistered(0);
+    }
+
+    if (state() == State::State4) {
+        if (m_replacementRequested) {
+            auto language = SP::GlobalSettings::Get<SP::GlobalSettings::Setting::Language>();
+            if (language == SP::GlobalSettings::Language::Unspecified) {
+                changeSection(SectionId::LanguageSelect, Anim::Next, 0.0f);
+                playSound(Sound::SoundId::SE_UI_BTN_OK, -1);
+                return;
+            }
+        }
+        REPLACED(afterCalc)();
+    }
 }
 
 } // namespace UI

@@ -72,6 +72,11 @@ Helper<S>::type Get() {
     return Instance().get<Setting, S>();
 }
 
+template <Setting S>
+void Set(typename Helper<S>::type value) {
+    Instance().set<Setting, S>(value);
+}
+
 } // namespace SP::GlobalSettings
 
 namespace SP::Settings {

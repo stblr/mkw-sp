@@ -180,6 +180,9 @@ asset_in_files = {
         os.path.join('button', 'ctrl', 'ToolsButton.brctr.json5'),
         # Course/Pack Select
         *pack_select_assets,
+        # Language Select
+        os.path.join('button', 'blyt', 'language_select_button.brlyt.json5'),
+        os.path.join('button', 'ctrl', 'LanguageSelectButton.brctr.json5'),
     ],
     os.path.join('Scene', 'UI', 'FontSP.arc.lzma'): [
         os.path.join('indicator_font.brfnt'),

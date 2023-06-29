@@ -165,7 +165,7 @@ enum class SectionId {
     ChannelDownloadData = 0x8B,
 
     Options = 0x8C,
-    AddMkChannel = 0x8D,
+    LanguageSelect = 0x8D, // Replaces Add Mario Kart Channel
     EnableMessageService = 0x8E,
 
     Unlock0 = 0x90,

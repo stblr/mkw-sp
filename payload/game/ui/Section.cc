@@ -9,6 +9,7 @@
 #include "game/ui/FriendRoomMessageSelectPage.hh"
 #include "game/ui/FriendRoomPage.hh"
 #include "game/ui/FriendRoomRulesPage.hh"
+#include "game/ui/LanguageSelectPage.hh"
 #include "game/ui/LicenseSelectPage.hh"
 #include "game/ui/ModelRenderPage.hh"
 #include "game/ui/MultiTeamSelectPage.hh"
@@ -213,6 +214,10 @@ void Section::addPage(PageId pageId) {
             {SectionId::Rankings, PageId::DirectConnection},
             {SectionId::Rankings, PageId::OnlineConnectionManager},
             {SectionId::Rankings, PageId::WifiConnectionFailed},
+
+            {SectionId::LanguageSelect, PageId::Channel},
+            {SectionId::LanguageSelect, PageId::Update},
+            {SectionId::LanguageSelect, PageId::ChannelObi},
     };
     for (const auto &deletion : deletions) {
         if (deletion.first == m_id && deletion.second == pageId) {
@@ -250,6 +255,9 @@ void Section::addActivePage(PageId pageId) {
             {SectionId::ServicePackChannel, PageId::StorageBenchmark},
 
             {SectionId::Rankings, PageId::OnlineConnectionManager},
+
+            {SectionId::LanguageSelect, PageId::ChannelObi},
+            {SectionId::LanguageSelect, PageId::Channel},
     };
     for (const auto &deletion : deletions) {
         if (deletion.first == m_id && deletion.second == pageId) {
@@ -392,6 +400,8 @@ void Section::addPages(SectionId id) {
             {SectionId::ServicePack, PageId::Channel},
 
             {SectionId::ServicePackChannel, PageId::ServicePackChannel},
+
+            {SectionId::LanguageSelect, PageId::LanguageSelect},
     };
     for (const auto &addition : additions) {
         if (addition.first == id) {
@@ -422,6 +432,8 @@ void Section::addActivePages(SectionId id) {
             {SectionId::Voting1PVS, PageId::OnlineConnectionManager},
 
             {SectionId::ServicePackChannel, PageId::ServicePackChannel},
+
+            {SectionId::LanguageSelect, PageId::LanguageSelect},
     };
     for (const auto &addition : additions) {
         if (addition.first == id) {
@@ -500,6 +512,8 @@ Page *Section::CreatePage(PageId pageId) {
         return new ServicePackChannelPage;
     case PageId::PackSelect:
         return new PackSelectPage;
+    case PageId::LanguageSelect:
+        return new LanguageSelectPage;
     default:
         return REPLACED(CreatePage)(pageId);
     }

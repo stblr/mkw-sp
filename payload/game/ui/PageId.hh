@@ -200,7 +200,7 @@ enum class PageId {
     OptionConfirm = 0xC9,
     Channel = 0xCA, // Replaces ChannelExplanation
     Update = 0xCB,  // Replaces ChannelConfirm
-    OptionsBackground = 0xCC,
+    ChannelObi = 0xCC,
 
     MenuSettings = 0xCE,  // Replaces LicenseRecordsOverall
     SettingsPopup = 0xCF, // Replaces LicenseRecordsFavorites
@@ -217,6 +217,7 @@ enum class PageId {
     // Extensions go here {
     // Do not explicitly assign values to prevent merge conflicts
     PackSelect,
+    LanguageSelect,
     // }
 
     Ext_MaxExclusive__,
