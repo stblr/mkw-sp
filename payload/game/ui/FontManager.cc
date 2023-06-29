@@ -7,18 +7,10 @@ namespace UI {
 void FontManager::init() {
     switch (SP::Language::GetFont()) {
     case SP::Language::Font::Korean:
-        if (REGION == REGION_K) {
-            initFont(0, "tt_kart_font_rodan_ntlg_pro_b.brfnt");
-        } else {
-            initFont(0, "tt_kart_font_rodan_ntlg_pro_b_K.brfnt");
-        }
+        initFont(0, "tt_kart_font_rodan_ntlg_pro_b_K.brfnt");
         break;
     default:
-        if (REGION == REGION_K) {
-            initFont(0, "tt_kart_font_rodan_ntlg_pro_b_R.brfnt");
-        } else {
-            initFont(0, "tt_kart_font_rodan_ntlg_pro_b.brfnt");
-        }
+        initFont(0, "tt_kart_font_rodan_ntlg_pro_b_R.brfnt");
         break;
     }
     switch (SP::Language::GetFont()) {

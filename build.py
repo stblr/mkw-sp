@@ -181,17 +181,15 @@ asset_in_files = {
         # Course/Pack Select
         *pack_select_assets,
     ],
-    os.path.join('Scene', 'UI', 'FontSP_K.arc.lzma'): [
+    os.path.join('Scene', 'UI', 'FontSP.arc.lzma'): [
+        os.path.join('indicator_font.brfnt'),
         os.path.join('kart_font_korea.brfnt'),
-        os.path.join('tt_kart_font_rodan_ntlg_pro_b_K.brfnt'),
-        os.path.join('mario_font_number_nocolor.brfnt'),
-        os.path.join('mario_font_number_outline.brfnt'),
-    ],
-    os.path.join('Scene', 'UI', 'FontSP_R.arc.lzma'): [
         os.path.join('kart_kanji_font.brfnt'),
-        os.path.join('tt_kart_font_rodan_ntlg_pro_b_R.brfnt'),
         os.path.join('mario_font_number_nocolor.brfnt'),
         os.path.join('mario_font_number_outline.brfnt'),
+        os.path.join('tt_kart_extension_font.brfnt'),
+        os.path.join('tt_kart_font_rodan_ntlg_pro_b_K.brfnt'),
+        os.path.join('tt_kart_font_rodan_ntlg_pro_b_R.brfnt'),
     ],
     os.path.join('Scene', 'UI', 'GlobeSP.arc.lzma'): [
         # Explanation text with 2 lines

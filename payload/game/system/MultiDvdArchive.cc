@@ -104,23 +104,17 @@ void MenuMultiDvdArchive::init() {
     }
 }
 
-FontMultiDvdArchive::FontMultiDvdArchive() : MultiDvdArchive(3) {
+FontMultiDvdArchive::FontMultiDvdArchive() : MultiDvdArchive(2) {
     init();
 }
 
 FontMultiDvdArchive::~FontMultiDvdArchive() = default;
 
 void FontMultiDvdArchive::init() {
-    if (REGION == REGION_K) {
-        snprintf(m_names[0], 0x80, "/Scene/UI/Font_K.szs");
-        snprintf(m_names[1], 0x80, "/Scene/UI/FontSP_R.szs");
-    } else {
-        snprintf(m_names[0], 0x80, "/Scene/UI/Font.szs");
-        snprintf(m_names[1], 0x80, "/Scene/UI/FontSP_K.szs");
-    }
-    snprintf(m_names[2], 0x80, "/Scene/UI/Font_Dif.szs");
+    snprintf(m_names[0], 0x80, "/Scene/UI/FontSP.szs");
+    snprintf(m_names[1], 0x80, "/Scene/UI/Font_Dif.szs");
 
-    for (size_t i = 0; i < 3; i++) {
+    for (size_t i = 0; i < 2; i++) {
         m_formats[i] = Format::Single;
     }
 }
