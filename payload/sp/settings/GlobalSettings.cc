@@ -1,6 +1,9 @@
 #include "GlobalSettings.hh"
 
+#include "sp/settings/Language.hh"
 #include "sp/storage/Storage.hh"
+
+#include <game/host_system/SystemManager.hh>
 
 #include <cstring>
 
@@ -72,6 +75,11 @@ void Init() {
 
     instance.writeIni(iniBuffer, sizeof(iniBuffer));
     SP::Storage::WriteFile(path, iniBuffer, strlen(iniBuffer), true);
+}
+
+void Save() {
+    auto *systemManager = System::SystemManager::Instance();
+    systemManager->m_languagePluralCondition = SP::Language::GetPluralCondition();
 }
 
 } // namespace SP::GlobalSettings

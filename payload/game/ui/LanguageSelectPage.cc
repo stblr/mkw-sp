@@ -47,7 +47,12 @@ void LanguageSelectPage::onInit() {
     m_buttons[static_cast<u32>(language)].selectDefault(0);
 }
 
+void LanguageSelectPage::onDeinit() {
+    SP::GlobalSettings::Save();
+}
+
 void LanguageSelectPage::onButtonFront(PushButton *button, u32 /* localPlayerId */) {
+    SP_LOG("%u", button->m_index);
     auto language = static_cast<SP::GlobalSettings::Language>(button->m_index);
     SP::GlobalSettings::Set<SP::GlobalSettings::Setting::Language>(language);
     changeSection(SectionId::TitleFromBoot, Anim::Next, button->getDelay());

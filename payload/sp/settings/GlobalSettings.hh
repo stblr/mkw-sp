@@ -66,6 +66,7 @@ inline Settings &Instance() {
     return reinterpret_cast<Settings &>(wtf);
 }
 void Init();
+void Save();
 
 template <Setting S>
 Helper<S>::type Get() {
@@ -76,6 +77,7 @@ template <Setting S>
 void Set(typename Helper<S>::type value) {
     Instance().set<Setting, S>(value);
 }
+
 
 } // namespace SP::GlobalSettings
 

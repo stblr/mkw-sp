@@ -2,6 +2,23 @@
 
 namespace SP::Language {
 
+PluralCondition GetPluralCondition() {
+    auto language = GlobalSettings::Get<GlobalSettings::Setting::Language>();
+    if (language == GlobalSettings::Language::Unspecified) {
+        language = GetDefault();
+    }
+    switch (language) {
+    case GlobalSettings::Language::Korean:
+    case GlobalSettings::Language::Japanese:
+        return PluralCondition::Never;
+    case GlobalSettings::Language::FrenchNTSC:
+    case GlobalSettings::Language::FrenchPAL:
+        return PluralCondition::GreaterThanOne;
+    default:
+        return PluralCondition::NotOne;
+    }
+}
+
 Font GetFont() {
     auto language = GlobalSettings::Get<GlobalSettings::Setting::Language>();
     if (language == GlobalSettings::Language::Unspecified) {

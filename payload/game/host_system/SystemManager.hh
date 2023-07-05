@@ -4,6 +4,7 @@
 
 #include <egg/core/eggHeap.hh>
 #include <sp/IOSDolphin.hh>
+#include <sp/settings/Language.hh>
 
 namespace System {
 
@@ -32,7 +33,12 @@ public:
 private:
     u8 _0000[0x0058 - 0x0000];
     u32 m_aspectRatio;
-    u8 _005c[0x0070 - 0x005c];
+
+public:
+    SP::Language::PluralCondition m_languagePluralCondition; // Modified
+
+private:
+    u8 _0060[0x0070 - 0x0060];
     u32 m_launchType;
     u8 _0074[0x0084 - 0x0074];
     u32 m_matchingArea;
@@ -40,7 +46,6 @@ private:
 
     static SystemManager *s_instance;
 };
-
 static_assert(sizeof(SystemManager) == 0x1100);
 
 class RichPresenceManager {

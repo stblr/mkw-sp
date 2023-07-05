@@ -87,6 +87,8 @@ MenuMultiDvdArchive::MenuMultiDvdArchive() : MultiDvdArchive(6) {
 MenuMultiDvdArchive::~MenuMultiDvdArchive() = default;
 
 void MenuMultiDvdArchive::init() {
+    SP_LOG("%s", SP::Language::GetBaseCode());
+    SP_LOG("%s", SP::Language::GetCode());
     if (REGION == REGION_K) {
         snprintf(m_names[0], 0x80, "_R.szs");
     } else {

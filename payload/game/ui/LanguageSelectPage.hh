@@ -13,6 +13,7 @@ public:
     ~LanguageSelectPage() override;
 
     void onInit() override;
+    void onDeinit() override;
 
 private:
     void onBack(u32 localPlayerId);
