@@ -12,7 +12,7 @@ header_pages:
 minima:
   skin: dark
 
-remote_theme: jekyll/minima
+remote_theme: jekyll/minima@2863624
 
 plugins:
   - jekyll-feed
