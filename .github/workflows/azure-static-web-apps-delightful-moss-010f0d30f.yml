@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - azure-swa
   pull_request:
     types: [opened, synchronize, reopened, closed]
     branches:
