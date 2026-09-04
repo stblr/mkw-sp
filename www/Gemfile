@@ -1,13 +1,8 @@
-# frozen_string_literal: true
+source "https://gem.coop"
 
-source "https://rubygems.org"
-
-# gem "rails"
+ruby "3.4.10"
 
 gem "jekyll", "~> 4.4"
-
 gem "jekyll-feed", "~> 0.17.0"
-
 gem "jekyll-remote-theme", "~> 0.5.2"
-
 gem "jekyll-seo-tag", "~> 2.9"
